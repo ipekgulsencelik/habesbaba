@@ -5,7 +5,7 @@ export const Images: string[] = [
 ];
 
 export const Instagrams: string[] = [
-  'assets/dist/images/instagram-img-01.jpg"',
+  'assets/dist/images/instagram-img-01.jpg',
   'assets/dist/images/instagram-img-02.jpg',
   'assets/dist/images/instagram-img-03.jpg',
   'assets/dist/images/instagram-img-04.jpg',

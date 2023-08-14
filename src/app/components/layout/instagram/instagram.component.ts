@@ -7,17 +7,44 @@ import { Instagrams } from 'shared/enums/images';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './instagram.component.html',
-  styleUrls: ['./instagram.component.css']
+  styleUrls: ['./instagram.component.css'],
 })
 export class InstagramComponent {
   currentImageIndex: number = 0;
   images: string[] = Instagrams;
+  currentIndex: number = 0;
+  visibleImages: string[] = [];
+
+  constructor() {}
+
+  ngOnInit(): void {
+    this.updateVisibleImages();
+  }
+
+  updateVisibleImages(): void {
+    this.visibleImages = this.images.slice(
+      this.currentIndex,
+      this.currentIndex + 4
+    );
+    console.log(this.visibleImages);
+  }
+
   prevImage(): void {
-    this.currentImageIndex =
-      (this.currentImageIndex - 1 + this.images.length) % this.images.length;
+    if (this.currentIndex > 0) {
+      this.currentIndex -= 1;
+      this.updateVisibleImages();
+    } else {
+      this.currentIndex = this.images.length - 4;
+    }
   }
 
   nextImage(): void {
-    this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
+    if (this.currentIndex + 4 < this.images.length) {
+      this.currentIndex += 1;
+      this.updateVisibleImages();
+    } else {
+      this.currentIndex = 0;
+      this.updateVisibleImages();
+    }
   }
 }
