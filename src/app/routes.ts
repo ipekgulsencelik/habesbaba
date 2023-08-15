@@ -19,15 +19,18 @@ export const routes: Routes = [
             },
             {
                 path: "shop",
-                loadComponent: () => import("./components/contact/contact.component")
-                    .then(c => c.ContactComponent),
-                    children: [
-                        {
-                            path: "wishlist",
-                            loadComponent: () => import("./components/wishlist/wishlist.component")
-                                .then(c => c.WishlistComponent),
-                        },
-                    ]
+                loadComponent: () => import("./components/shop/shop.component")
+                    .then(c => c.ShopComponent),
+            },
+            {
+                path: "shop-detail",
+                loadComponent: () => import("./components/detail/detail.component")
+                    .then(c => c.DetailComponent),
+            },
+            {
+                path: "cart",
+                loadComponent: () => import("./components/cart/cart.component")
+                    .then(c => c.CartComponent),
             },
             {
                 path: "checkout",
