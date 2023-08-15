@@ -312,7 +312,7 @@
 	font-size: 13px;
 }
 
- .main-header{
+.main-header{
 }
  .search a{
      color: #b0b435;
@@ -762,6 +762,7 @@
 }
  .cover-slides .container{
      height: 100%;
+     top: -675px;
      position: relative;
      z-index: 2;
 }
@@ -779,7 +780,7 @@
      height: 100%;
      width: 100%;
      left: 0;
-     top: 0;
+     top: -500;
      opacity: 0.5;
 }
  .cover-slides h1{

@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-contact',
+  selector: 'app-service',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  templateUrl: './service.component.html',
+  styleUrls: ['./service.component.css']
 })
-export class ContactComponent {
+export class ServiceComponent {
 
 }

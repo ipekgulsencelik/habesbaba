@@ -1,11 +1,7 @@
 import { Routes } from "@angular/router";
 
 export const routes: Routes = [
-    {
-        path: "about",
-        loadComponent: () => import("./components/about/about/about.component")
-            .then(c => c.AboutComponent),
-    },
+    
     {
         path: "",
         loadComponent: () => import("./components/layout/layout.component")
@@ -15,6 +11,43 @@ export const routes: Routes = [
                 path: "",
                 loadComponent: () => import("./components/home/home.component")
                     .then(c => c.HomeComponent),
+            },
+            {
+                path: "about",
+                loadComponent: () => import("./components/about/about.component")
+                    .then(c => c.AboutComponent),
+            },
+            {
+                path: "shop",
+                loadComponent: () => import("./components/contact/contact.component")
+                    .then(c => c.ContactComponent),
+                    children: [
+                        {
+                            path: "wishlist",
+                            loadComponent: () => import("./components/wishlist/wishlist.component")
+                                .then(c => c.WishlistComponent),
+                        },
+                    ]
+            },
+            {
+                path: "my-account",
+                loadComponent: () => import("./components/account/account.component")
+                    .then(c => c.AccountComponent),
+            },
+            {
+                path: "wishlist",
+                loadComponent: () => import("./components/wishlist/wishlist.component")
+                    .then(c => c.WishlistComponent),
+            },
+            {
+                path: "gallery",
+                loadComponent: () => import("./components/gallery/gallery.component")
+                    .then(c => c.GalleryComponent),
+            },
+            {
+                path: "contact",
+                loadComponent: () => import("./components/contact/contact.component")
+                    .then(c => c.ContactComponent),
             },
         ]
     },

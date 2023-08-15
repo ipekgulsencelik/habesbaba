@@ -24,7 +24,7 @@ export class InstagramComponent {
   updateVisibleImages(): void {
     this.visibleImages = this.images.slice(
       this.currentIndex,
-      this.currentIndex + 4
+      this.currentIndex + 4.5
     );
     console.log(this.visibleImages);
   }
@@ -34,12 +34,12 @@ export class InstagramComponent {
       this.currentIndex -= 1;
       this.updateVisibleImages();
     } else {
-      this.currentIndex = this.images.length - 4;
+      this.currentIndex = this.images.length - 4.5;
     }
   }
 
   nextImage(): void {
-    if (this.currentIndex + 4 < this.images.length) {
+    if (this.currentIndex + 4.5 < this.images.length) {
       this.currentIndex += 1;
       this.updateVisibleImages();
     } else {
