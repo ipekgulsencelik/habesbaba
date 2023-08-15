@@ -30,6 +30,11 @@ export const routes: Routes = [
                     ]
             },
             {
+                path: "checkout",
+                loadComponent: () => import("./components/checkout/checkout.component")
+                    .then(c => c.CheckoutComponent),
+            },
+            {
                 path: "my-account",
                 loadComponent: () => import("./components/account/account.component")
                     .then(c => c.AccountComponent),
